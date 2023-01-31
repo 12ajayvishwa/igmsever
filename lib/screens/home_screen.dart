@@ -32,7 +32,7 @@ class _HomeScreenState extends State<HomeScreen>
     SendPort? sendPort = IsolateNameServer.lookupPortByName("downloading");
 
     sendPort?.send([id, status, progress]);
-  }
+  } 
 
   @override
   void initState() {
@@ -119,20 +119,21 @@ class _HomeScreenState extends State<HomeScreen>
                           child:
                               CircularProgressIndicator(), //if downloading is true show Progress Indicator
                         )
-                      : downloadedReel != null?
-                      
-                      Container(  
-                          child: ElevatedButton(
-                              onPressed: () {
-                                Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                        builder: (_) => DownloadedVideoPlayer(
-                                               downloadedReel,
-                                            )));
-                              },
-                              child: Text("Play video")),
-                        ):Container(),
+                      : downloadedReel != null
+                          ? Container(
+                              child: ElevatedButton(
+                                  onPressed: () {
+                                    Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                            builder: (_) =>
+                                                DownloadedVideoPlayer(
+                                                  downloadedReel,
+                                                )));
+                                  },
+                                  child: Text("Play video")),
+                            )
+                          : Container(),
                 ),
               ],
             ),

@@ -9,9 +9,24 @@ abstract class SaverEvent extends Equatable {
 
 class DownloadingEvent extends SaverEvent {
   final String url;
-  DownloadingEvent({required this.url});
+  DownloadingEvent(this.url);
 
-
-  @override 
+  @override
   List<Object> get props => [url];
-} 
+}
+
+class LoadedEvent extends SaverEvent {
+  final String downloadedReel;
+  const LoadedEvent(this.downloadedReel);
+
+  @override
+  List<Object> get props => [downloadedReel];
+}
+
+class ErrorEvent extends SaverEvent {
+  String errorMessage;
+  ErrorEvent(this.errorMessage);
+
+  @override
+  List<Object> get props => [errorMessage];
+}

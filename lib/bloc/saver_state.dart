@@ -11,7 +11,9 @@ class SaverInitial extends SaverState {}
 
 class SaverLoading extends SaverState {}
 
-class SaverLoaded extends SaverState {}
+class SaverLoaded extends SaverState {
+
+}
 
 class SaverError extends SaverState {
   String error;
