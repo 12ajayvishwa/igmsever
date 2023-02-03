@@ -26,7 +26,7 @@ class _HomeScreenState extends State<HomeScreen>
   String? downloadedReel;
   int progress = 0;
 
-  ReceivePort _receivePort = ReceivePort();
+  final ReceivePort _receivePort = ReceivePort();
 
   static downloadingCallback(id, status, progress) {
     SendPort? sendPort = IsolateNameServer.lookupPortByName("downloading");
