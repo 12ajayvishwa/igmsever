@@ -15,9 +15,9 @@ class DownloadingEvent extends SaverEvent {
   List<Object> get props => [url];
 }
 
-class LoadedEvent extends SaverEvent {
+class DownloadedEvent extends SaverEvent {
   final String downloadedReel;
-  const LoadedEvent(this.downloadedReel);
+  const DownloadedEvent(this.downloadedReel);
 
   @override
   List<Object> get props => [downloadedReel];
